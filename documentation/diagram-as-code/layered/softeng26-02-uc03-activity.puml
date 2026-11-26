@@ -1,0 +1,87 @@
+@startuml uc3_activity
+!include ../style.puml
+
+skinparam titleFontColor #B8860B
+title UC3 - View a country profile with the time series of its indicators
+
+|#FAFAFA|User|
+|#F0F0F0|Front-end|
+|#E6E6E6|API|
+|#DCDCDC|Database|
+
+|User|
+start
+:Select a country\n(click on the map or search by name);
+note right
+  Preconditions:
+  - country list (ISO3 code, name) already loaded
+  - indicator list already loaded
+  - period from 1975 to the latest available year
+end note
+
+|Front-end|
+:Request the country profile\n""GET /api/countries/{iso3}"";
+
+|API|
+:Validate the ISO3 code;
+
+if (Valid format\n(three letters, e.g. GRC)?) then (no)
+  :Return an error (400);
+  |Front-end|
+  :Show the message "Invalid country code";
+  stop
+else (yes)
+endif
+
+|Database|
+:Read the Country (name, region, income group)\nand its Observations from 1975\nto the latest available year, for every Indicator;
+
+if (Query succeeded?) then (no)
+  |API|
+  :Return an error (503);
+  |Front-end|
+  :Show an error message with a retry button;
+  stop
+else (yes)
+endif
+
+|API|
+if (Country found?\n(aggregates such as WLD are not stored)) then (no)
+  :Return an error (404);
+  |Front-end|
+  :Show the message "Country not found";
+  stop
+else (yes)
+endif
+
+|API|
+:Return the Country and\none time series per Indicator\n(year, value, unit);
+
+|Front-end|
+:Show the profile header\n(name, region, income group);
+
+while (Indicator left to display?) is (yes)
+  if (Indicator has at least one value?) then (no)
+    :Show "No data" for this indicator;
+  else (yes)
+    :Draw the line chart\n(missing years as gaps, not as 0);
+  endif
+endwhile (no)
+
+|User|
+:Hover (desktop) or tap (smartphone)\na point of a chart;
+
+|Front-end|
+:Show the tooltip\n(indicator, year, value, unit);
+
+|User|
+if (Add this country to a comparison?) then (yes)
+  |Front-end|
+  :Open the comparison view\nwith this country preselected (UC4);
+else (no)
+endif
+
+|User|
+stop
+
+@enduml

@@ -1,0 +1,85 @@
+@startuml uc3_activity
+!include ../style.puml
+
+skinparam titleFontColor #B8860B
+title UC3 - View a country profile with the time series of its indicators
+
+|#FAFAFA|User|
+|#F0F0F0|View|
+|#E6E6E6|Controller|
+|#DCDCDC|Model|
+
+|User|
+start
+:Select a country\n(click on the map or search by name);
+note right
+  Preconditions:
+  - desktop view (desktop.html) or
+    smartphone view (mobile.html) open
+  - country list (ISO3 code, name) already loaded
+  - indicator list already loaded
+  - period from 1975 to the latest available year
+end note
+
+|View|
+:Send the request to the controller\n""GET /api/countries/{iso3}"";
+
+|Controller|
+:Validate the ISO3 code;
+
+if (Valid format\n(three letters, e.g. GRC)?) then (no)
+  :Return an error (400);
+  |View|
+  :Show the message "Invalid country code";
+  stop
+else (yes)
+endif
+
+|Model|
+:Load the Country (name, region, income group)\nand its Observations from 1975\nto the latest available year, for every Indicator;
+
+if (Query succeeded?) then (no)
+  |Controller|
+  :Return an error (503);
+  |View|
+  :Show an error message with a retry button;
+  stop
+else (yes)
+endif
+
+|Controller|
+if (Country found?\n(aggregates such as WLD are not stored)) then (no)
+  :Return an error (404);
+  |View|
+  :Show the message "Country not found";
+  stop
+else (yes)
+endif
+
+|Controller|
+:Build the profile:\n- one time series per Indicator (year, value, unit)\n- missing years kept empty (gaps, not 0)\n- indicators without any value marked "No data";
+
+|View|
+if (Which view is open?) then (desktop.html)
+  :Desktop view: show the header\nand all line charts side by side;
+else (mobile.html)
+  :Smartphone view: show the header\nand one chart at a time\n(swipe between indicators);
+endif
+
+|User|
+:Hover (desktop) or tap (smartphone)\na point of a chart;
+
+|View|
+:Show the tooltip\n(indicator, year, value, unit);
+
+|User|
+if (Add this country to a comparison?) then (yes)
+  |View|
+  :Open the comparison view\nwith this country preselected (UC4);
+else (no)
+endif
+
+|User|
+stop
+
+@enduml
