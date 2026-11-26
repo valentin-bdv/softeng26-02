@@ -52,6 +52,15 @@ An interactive world map showing how countries have evolved over the last 50 yea
 | UC6 | Export data as CSV or JSON through the API (also the basis of the CLI) | No (API/CLI) |
 | UC7 | Administer the import and update of World Bank and GISCO data | No (admin) |
 
+---
+Diagrams:
+
+*UC1 activity diagram. Source: [uc1_activity.puml](diagrams/uc1_activity.puml)*
+![UC1 – Display the world map for one indicator and one year](diagrams/uc1_activity.svg)
+
+*UC2 state diagram. Source: [uc2_state.puml](diagrams/uc2_state.puml)*
+![UC2 – Animation of an indicator over time](diagrams/uc2_state.svg)
+
 ### State diagrams
 
 To have objects with a real lifecycle, we model two of them:
