@@ -1,5 +1,5 @@
 @startuml uc2_state
-!include style.puml
+!include ../style.puml
 
 ' Title, arrows, and arrow labels in decision-block golden yellow;
 ' state box text stays in grey (#333333 / #555555 from style.puml)

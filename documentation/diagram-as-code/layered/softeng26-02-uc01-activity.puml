@@ -1,5 +1,5 @@
 @startuml uc1_activity
-!include style.puml
+!include ../style.puml
 
 skinparam titleFontColor #B8860B
 title UC1 - Display the world map for one indicator and one year

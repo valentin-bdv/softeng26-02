@@ -55,11 +55,11 @@ An interactive world map showing how countries have evolved over the last 50 yea
 ---
 Diagrams:
 
-*UC1 activity diagram. Source: [uc1_activity.puml](diagrams/uc1_activity.puml)*
-![UC1 – Display the world map for one indicator and one year](diagrams/uc1_activity.svg)
+*UC1 activity diagram. Source: [softeng26-02-uc01-activity.puml](diagram-as-code/layered/softeng26-02-uc01-activity.puml)*
+![UC1 – Display the world map for one indicator and one year](diagram-as-code/layered/softeng26-02-uc01-activity.svg)
 
-*UC2 state diagram. Source: [uc2_state.puml](diagrams/uc2_state.puml)*
-![UC2 – Animation of an indicator over time](diagrams/uc2_state.svg)
+*UC2 state diagram. Source: [softeng26-02-uc02-state.puml](diagram-as-code/layered/softeng26-02-uc02-state.puml)*
+![UC2 – Animation of an indicator over time](diagram-as-code/layered/softeng26-02-uc02-state.svg)
 
 ### State diagrams
 

@@ -1,6 +1,6 @@
 ' Style partagé pour tous les diagrammes du projet : sobre, nuances de gris,
 ' jaune doré réservé aux décisions (losanges) et aux libellés yes/no.
-' Usage : !include style.puml   (garder ce fichier à côté des diagrammes)
+' Usage : !include ../style.puml   (depuis layered/ ou mvc/)
 
 ' --- Palette -------------------------------------------------------------
 ' Texte            #333333
