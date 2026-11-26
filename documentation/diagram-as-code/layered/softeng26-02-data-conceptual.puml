@@ -1,0 +1,157 @@
+@startuml data-conceptual
+!include ../style.puml
+
+' Conceptual data model - layered architecture.
+' Same entities as the MVC version; only the architectural notes differ.
+
+skinparam ClassBackgroundColor #F2F2F2
+skinparam ClassBorderColor #6B6B6B
+skinparam ClassFontColor #333333
+skinparam ClassAttributeFontColor #333333
+skinparam ClassStereotypeFontColor #555555
+skinparam PackageBorderColor #9E9E9E
+skinparam PackageFontColor #333333
+skinparam linetype ortho
+skinparam nodesep 60
+skinparam ranksep 60
+hide circle
+hide methods
+
+title Development Globe - Conceptual data model (layered)
+
+package "Data layer (PostgreSQL + PostGIS)" {
+
+  together {
+    entity Country {
+      * iso3_code : code (PK)
+      --
+      iso2_code : code
+      * name : text
+      region : text
+      income_group : text
+      capital_city : text
+      geometry : MultiPolygon (EPSG:4326)
+    }
+
+    entity Indicator {
+      * code : code (PK)
+      --
+      * name : text
+      unit : text
+      topic : text
+      description : text
+      source : text
+    }
+  }
+
+  entity Observation {
+    * country : Country (PK)
+    * indicator : Indicator (PK)
+    * year : year (PK)
+    --
+    * value : decimal
+  }
+
+  entity CustomIndex {
+    * id : identifier (PK)
+    --
+    * name : text
+    description : text
+    * status : IndexStatus
+    * created_at : timestamp
+    updated_at : timestamp
+  }
+
+  entity IndexComponent {
+    * custom_index : CustomIndex (PK)
+    * indicator : Indicator (PK)
+    --
+    * weight : decimal ]0..1]
+    * normalisation : NormalisationMethod
+    * direction : Direction
+  }
+
+  entity ImportJob {
+    * id : identifier (PK)
+    --
+    * source : DataSource
+    * status : ImportStatus
+    * scheduled_at : timestamp
+    started_at : timestamp
+    finished_at : timestamp
+    * attempt : integer
+    rows_imported : integer
+    error_message : text
+  }
+
+  enum IndexStatus {
+    DRAFT
+    COMPUTED
+    PUBLISHED
+    ARCHIVED
+  }
+
+  enum ImportStatus {
+    SCHEDULED
+    RUNNING
+    COMPLETED
+    FAILED
+  }
+
+  enum DataSource {
+    WORLD_BANK
+    GISCO
+  }
+
+  enum NormalisationMethod {
+    MIN_MAX
+    Z_SCORE
+  }
+
+  enum Direction {
+    HIGHER_IS_BETTER
+    LOWER_IS_BETTER
+  }
+}
+
+Country "1" -- "0..*" Observation : has >
+Indicator "1" -- "0..*" Observation : measured by >
+CustomIndex "1" *-- "1..*" IndexComponent : weights >
+Indicator "1" -- "0..*" IndexComponent : used in >
+ImportJob "0..1" -- "0..*" Observation : loads >
+ImportJob "0..1" -- "0..*" Country : loads >
+
+CustomIndex ..> IndexStatus
+IndexComponent ..> NormalisationMethod
+IndexComponent ..> Direction
+ImportJob ..> ImportStatus
+ImportJob ..> DataSource
+
+note right of Country
+  Only real countries: World Bank aggregates
+  (region id "NA": World, Euro area,
+  income groups...) are never stored.
+  Joined to GISCO on the ISO3 code
+  (GISCO ISO3_CODE = World Bank id).
+end note
+
+note right of Observation
+  One row per country, indicator and year.
+  A missing value has no row:
+  never 0 or an empty string.
+end note
+
+note bottom of IndexComponent
+  The weights of one CustomIndex sum to 1.
+  The ranking is computed on demand
+  from Observation, not stored.
+end note
+
+note as LayerNote
+  Layered architecture: these entities live in the
+  data layer. The backend reaches them only through
+  its repositories package; the services, the REST API,
+  the CLI and the frontend never access the database directly.
+end note
+
+@enduml
