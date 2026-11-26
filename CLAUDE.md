@@ -2,6 +2,50 @@
 
 Guidance for Claude Code when working in this repository (Development Globe, NTUA Software Engineering 2026-2027, team softeng26-02).
 
+## Project summary
+
+**Development Globe** is an interactive world map showing how countries have evolved over the last 50 years. The user picks an indicator (life expectancy, GDP per capita, CO₂ emissions...) and a year, scrolls through the years, opens a country profile, compares countries, and builds a custom index by weighting several indicators.
+
+- **Data sources:** World Bank Indicators API (yearly time series per country) and GISCO Countries from Eurostat (country boundaries, GeoJSON), joined on the ISO3 country code.
+- **Two architectures, same application:** the course requires building it twice.
+  - **Layered:** backend, REST API, CLI calling the API, one responsive web frontend (desktop + smartphone).
+  - **MVC:** backend (Model + Controller), REST API, two separate web Views (desktop and smartphone).
+- **Use cases:** UC1 world map for one indicator and one year, UC2 animation over the years, UC3 country profile, UC4 country comparison, UC5 custom index and ranking, UC6 CSV/JSON export, UC7 data import administration. UC1–UC4 are implemented in the frontend.
+- **Deadlines:** 30/11/2026 for the SRS and the conceptual, activity and state diagrams; 10/01/2027 for everything else (code, tests, remaining diagrams, Visual Paradigm models).
+- **Reference documents:** the course instructions `documentation/project_softeng2026_v01_en.pdf` and the team plan `documentation/Development_Globe_Project_Plan.md`. When they disagree, the course instructions win.
+- **Language:** everything in the repository (code, comments, documentation, commits, issues, pull requests) is written in English.
+
+## Repository structure
+
+```
+CLAUDE.md
+README.md
+documentation/
+├── requirements/            srs-softeng26-02.md (SRS, Markdown with embedded PlantUML)
+├── diagram-as-code/
+│   ├── style.puml           shared PlantUML style
+│   ├── layered/             every diagram, layered version
+│   └── mvc/                 every diagram, MVC version
+├── visual-paradigm/         softeng26-02-layered.vpp, softeng26-02-mvc.vpp
+├── apis/                    OpenAPI specs and Postman scripts
+├── Development_Globe_Project_Plan.md
+└── project_softeng2026_v01_en.pdf
+layered/
+├── backend/   ├── cli/   ├── frontend/   ├── data/   └── testing/
+mvc/
+├── backend/   ├── frontend/   ├── data/   └── testing/
+```
+
+The folder names and locations are imposed by the course: do not rename, move or add top-level folders. Empty folders contain a `.gitkeep` file, which can be removed once the folder has real content.
+
+### Naming rules
+
+- **Diagrams:** `softeng26-02-[diagram_id].puml`, stored in **both** `diagram-as-code/layered/` and `diagram-as-code/mvc/`, with differences reflecting each architecture. The same `diagram_id` is used in both folders.
+- **Diagram ids:** `uc01-activity` ... `uc07-activity`, `uc02-state`, `state-custom-index`, `state-import-job`, `data-conceptual`; later `class`, `api`, `component`, `deployment`.
+- **SRS:** `documentation/requirements/srs-softeng26-02.md`, a single file for the whole team.
+- **PlantUML:** every diagram starts with `!include ../style.puml`. Diagrams and documents must be PlantUML or Markdown: no Word files and no diagrams drawn as images. A generated `.svg` may sit next to its `.puml` for display in Markdown, but the `.puml` is the source.
+- **Entity names** in diagrams and code follow the conceptual data model: Country, Indicator, Observation, CustomIndex, IndexComponent, ImportJob.
+
 ## Tech stack
 
 These choices are final. They replace any open question in `documentation/Development_Globe_Project_Plan.md`. Do not add another language, framework, database or major library without the team's agreement: if a task needs a choice not listed here, ask the user and propose adding it to this section.
