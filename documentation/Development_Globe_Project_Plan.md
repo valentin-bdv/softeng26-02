@@ -96,27 +96,27 @@ The course allows Python or JavaScript (Node/Express) for the backend, PostgreSQ
 
 ## 4. Work split for Submission 1 (30 November)
 
-Principle: each member owns one or two use cases **end to end** (SRS text + activity diagrams in **both** architectures). This makes contributions clearly visible on GitHub. Replace A–F with our names.
+Principle: each member owns one or two use cases **end to end** (SRS text + activity diagrams in **both** architectures). This makes contributions clearly visible on GitHub.
 
 | Member | Responsibility | Files to deliver |
 |---|---|---|
-| **Valentin** — Coordinator | CLAUDE.md Conception, SRS general sections (introduction, scope, glossary, non-functional requirements), consistency of the whole SRS, GitHub Project board, final review. | `srs-softeng26-XX.md` (general parts) |
+| **Valentin** — Coordinator | CLAUDE.md Conception, SRS general sections (introduction, scope, glossary, non-functional requirements), consistency of the whole SRS, GitHub Project board, final review. | `srs-softeng26-02.md` (general parts) |
 | **William** — Data | Explore World Bank API and GISCO join; conceptual data model for both architectures; data section of the SRS. | data-conceptual `.puml` (layered + mvc) |
 | **Anthony** | UC1 (map) and UC2 (animation): SRS description + activity diagrams. | 4 activity `.puml` |
 | **Jonah** | UC3 (country profile) and UC4 (comparison): SRS description + activity diagrams. | 4 activity `.puml` |
-| **E** | UC5 (custom index): SRS description + activity diagrams + Custom index state diagram. | 2 activity + 2 state `.puml` |
-| **F** | UC6 (export) and UC7 (admin import): SRS description + activity diagrams + Import job state diagram. | 4 activity + 2 state `.puml` |
+| **Jules** | UC5 (custom index): SRS description + activity diagrams + Custom index state diagram. | 2 activity + 2 state `.puml` |
+| **Edrik** | UC6 (export) and UC7 (admin import): SRS description + activity diagrams + Import job state diagram. | 4 activity + 2 state `.puml` |
 
-**File naming** (required by the course): `softeng26-XX-[diagram_id].puml`, e.g. `softeng26-XX-uc01-activity.puml`, `softeng26-XX-state-custom-index.puml`. Each diagram goes in both `documentation/diagram-as-code/layered` and `documentation/diagram-as-code/mvc`, with differences reflecting each architecture.
+**File naming** (required by the course): `softeng26-02-[diagram_id].puml`, e.g. `softeng26-02-uc01-activity.puml`, `softeng26-02-state-custom-index.puml`. Each diagram goes in both `documentation/diagram-as-code/layered` and `documentation/diagram-as-code/mvc`, with differences reflecting each architecture.
 
 ### Timeline
 
 | Day | Goal |
 |---|---|
 | **Thu 26 Nov** | Repository and folder structure ready, everyone has access, GitHub Project board with one issue per task. Use cases and work split validated. |
-| **Fri 27 Nov** | Drafts: each member writes their use case descriptions; B shares the data model so diagrams use the same entity names. |
+| **Fri 27 Nov** | Drafts: each member writes their use case descriptions; William shares the data model so diagrams use the same entity names. |
 | **Sat 28 Nov** | All PlantUML diagrams written and rendering without errors; pull requests opened. |
-| **Sun 29 Nov** | Cross-review (each member reviews someone else's work), A integrates the full SRS, fixes. |
+| **Sun 29 Nov** | Cross-review (each member reviews someone else's work), Valentin integrates the full SRS, fixes. |
 | **Mon 30 Nov** | Final check of file names and folders, merge into main, submission. |
 
 ---
@@ -131,7 +131,7 @@ Principle: each member owns one or two use cases **end to end** (SRS text + acti
 ### Repository structure
 
 ```
-documentation/requirements/          srs-softeng26-XX.md
+documentation/requirements/          srs-softeng26-02.md
 documentation/diagram-as-code/layered/
 documentation/diagram-as-code/mvc/
 documentation/visual-paradigm/
@@ -146,5 +146,5 @@ mvc/      backend, frontend, data, testing
 - [ ] Conceptual data diagram in both architecture folders.
 - [ ] Activity diagrams for every use case, in both architectures.
 - [ ] State diagrams for the custom index and the import job.
-- [ ] All files named `softeng26-XX-...` and stored in the right folders.
+- [ ] All files named `softeng26-02-...` and stored in the right folders.
 - [ ] Every member has commits and reviewed pull requests.
