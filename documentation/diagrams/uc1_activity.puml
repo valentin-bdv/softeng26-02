@@ -1,7 +1,7 @@
 @startuml uc1_activity
 !include style.puml
 
-title UC1 - Display the world map for one indicator and one year\n(data available from 1975 to 2025)
+title UC1 - Display the world map for one indicator and one year
 
 |#FAFAFA|User|
 |#F0F0F0|Front-end|

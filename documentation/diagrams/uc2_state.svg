@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1288px" preserveAspectRatio="none" style="width:1440px;height:1288px;" version="1.1" viewBox="0 0 1440 1288" width="1440px" zoomAndPan="magnify"><defs/><g><text fill="#B8860B" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="481" x="482.5" y="14.8516">UC2 - Animation of an indicator over time (1975-2025)</text><rect fill="#F2F2F2" height="50" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="50" x="586" y="126.625"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="586" x2="636" y1="150.5938" y2="150.5938"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="22" x="600" y="142.7637">Idle</text><rect fill="#F2F2F2" height="50" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="225" x="339.5" y="337.625"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="339.5" x2="564.5" y1="361.5938" y2="361.5938"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="49" x="427.5" y="353.7637">Loading</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="205" x="344.5" y="376.8042">entry / fetch all years in one API call</text><rect fill="#F2F2F2" height="50" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="202" x="106" y="838.125"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="106" x2="308" y1="862.0938" y2="862.0938"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="47" x="183.5" y="854.2637">NoData</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="182" x="111" y="877.3042">no data available for this period</text><rect fill="#F2F2F2" height="50" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="209" x="224.5" y="126.625"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="224.5" x2="433.5" y1="150.5938" y2="150.5938"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="31" x="313.5" y="142.7637">Error</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="189" x="229.5" y="165.8042">API unavailable or invalid request</text><ellipse cx="611" cy="36.625" fill="#333333" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><ellipse cx="680" cy="1267.625" fill="none" rx="10" ry="10" style="stroke: #333333; stroke-width: 1.0;"/><ellipse cx="680.5" cy="1268.125" fill="#333333" rx="6" ry="6" style="stroke: none; stroke-width: 1.0;"/><path d="M1052,835.125 L1052,859.125 L972.03,863.125 L1052,867.125 L1052,891 A5,5 0 0 0 1057,896 L1423,896 A5,5 0 0 0 1428,891 L1428,840.125 L1418,830.125 L1057,830.125 A5,5 0 0 0 1052,835.125 " fill="#FFFFFF" style="stroke: #9E9E9E; stroke-width: 1.0;"/><path d="M1418,830.125 L1418,837.625 A2.5,2.5 0 0 0 1420.5,840.125 L1428,840.125 L1418,830.125 " fill="#FFFFFF" style="stroke: #9E9E9E; stroke-width: 1.0;"/><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="282" x="1058" y="846.2637">Defaults: startYear = 1975, endYear = 2025.</text><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="291" x="1058" y="860.2324">Global colour scale is fixed on entry so colours</text><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="267" x="1058" y="874.2012">keep the same meaning across all frames.</text><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="355" x="1058" y="888.1699">Map geometry is never reloaded; only fill colours update.</text><rect fill="#F2F2F2" height="628.5781" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="584" x="388" y="548.625"/><rect fill="#FFFFFF" height="568" rx="12.5" ry="12.5" style="stroke: #FFFFFF; stroke-width: 1.0;" width="578" x="391" y="606.2031"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="388" x2="972" y1="603.2031" y2="603.2031"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="388" x2="972" y1="572.5938" y2="572.5938"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="37" x="661.5" y="564.7637">Active</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="201" x="393" y="582.8042">entry / compute global colour scale</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="223" x="393" y="595.6089">changeSpeed(s) / update timer interval</text><rect fill="#F2F2F2" height="50" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="290" x="494.43" y="699.2031"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="494.43" x2="784.43" y1="723.1719" y2="723.1719"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="47" x="615.93" y="715.3418">Paused</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="270" x="499.43" y="738.3823">scrub(year) / currentYear = year, recolour map</text><rect fill="#F2F2F2" height="59.5781" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="122" x="527.43" y="825.2031"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="527.43" x2="649.43" y1="849.1719" y2="849.1719"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="44" x="566.43" y="841.3418">Playing</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="102" x="532.43" y="864.3823">entry / start timer</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="532.43" y="877.187">exit / stop timer</text><rect fill="#F2F2F2" height="50" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="151" x="524.93" y="1112.2031"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="524.93" x2="675.93" y1="1136.1719" y2="1136.1719"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="52" x="574.43" y="1128.3418">Finished</text><text fill="#555555" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="131" x="529.93" y="1151.3823">currentYear = endYear</text><polygon fill="#F5C242" points="600.43,1038.2031,612.43,1050.2031,600.43,1062.2031,588.43,1050.2031,600.43,1038.2031" style="stroke: #B8860B; stroke-width: 1.5;"/><ellipse cx="639.43" cy="626.2031" fill="#333333" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><!--MD5=[ea7ecf19b67144367d5c04c15a7e9793]
+link *start*Active to Paused--><path d="M639.43,636.4031 C639.43,649.5031 639.43,674.1131 639.43,693.7831 " fill="none" id="*start*Active-&gt;Paused" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="639.43,698.9331,643.43,689.9331,639.43,693.9331,635.43,689.9331,639.43,698.9331" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="141" x="640.43" y="665.4136">currentYear = startYear,</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="672.93" y="678.2183">recolour map</text><!--MD5=[4b0cca33227c0cc69e668d6ca050faa8]
+link Paused to Playing--><path d="M494.22,744.5731 C472.06,750.3731 454.01,757.7931 446.43,767.2031 C435.27,781.0431 436.02,792.7931 446.43,807.2031 C463.82,831.2831 494.02,843.2231 522.11,849.0731 " fill="none" id="Paused-&gt;Playing" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="527.32,850.0931,519.2507,844.4463,522.4122,849.1372,517.7213,852.2988,527.32,850.0931" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="23" x="505.43" y="784.9136">play</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="139" x="447.43" y="797.7183">[currentYear &lt; endYear]</text><!--MD5=[3108d19e859705d33651a2bcbd9b0911]
+reverse link Paused to Playing--><path d="M617.66,753.8931 C614.97,758.2131 612.46,762.7231 610.43,767.2031 C602.06,785.6431 596.52,807.7931 593.09,825.1231 " fill="none" id="Paused&lt;-Playing" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="620.4,749.6531,612.1555,755.0409,617.6861,753.8525,618.8745,759.3831,620.4,749.6531" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="35" x="611.43" y="791.4136">pause</text><!--MD5=[a51a3cf912eeaceef949027d650a9a00]
+link Playing to Paused--><path d="M634.36,825.0631 C639.63,819.7731 644.24,813.8131 647.43,807.2031 C655.31,790.8531 653.41,770.5731 649.49,754.2631 " fill="none" id="Playing-&gt;Paused" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="648.22,749.3431,646.6097,759.0594,649.4763,754.1827,654.353,757.0494,648.22,749.3431" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="673.43" y="778.4136">scrub(year) /</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="113" x="653.43" y="791.2183">currentYear = year,</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="671.93" y="804.0229">recolour map</text><!--MD5=[77bad7b1703740ccb2b7738b95dc97bd]
+link Finished to Paused--><path d="M676.1,1121.6431 C739.4,1107.2231 819.43,1082.7631 819.43,1051.2031 C819.43,854.2031 819.43,854.2031 819.43,854.2031 C819.43,810.0431 805.56,795.2231 771.43,767.2031 C764.13,761.2131 755.98,756.0831 747.39,751.6731 " fill="none" id="Finished-&gt;Paused" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="742.58,749.2931,748.8701,756.8717,747.0607,751.512,752.4203,749.7025,742.58,749.2931" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="73" x="840.43" y="933.4136">scrub(year) /</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="113" x="820.43" y="946.2183">currentYear = year,</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="838.93" y="959.0229">recolour map</text><!--MD5=[fb323d5797d17ba5067267cf438b6a7e]
+link Playing to checkEnd--><path d="M649.75,868.5431 C679.5,877.9431 712.59,894.2431 730.43,922.2031 C766.48,978.7131 653.15,1028.9031 613.56,1044.3331 " fill="none" id="Playing-&gt;checkEnd" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="608.69,1046.2031,618.5268,1046.6895,613.3538,1044.4006,615.6427,1039.2275,608.69,1046.2031" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="19" x="737.43" y="946.4136">tick</text><!--MD5=[306abe475e8f794fc09128da6c739a94]
+link checkEnd to Playing--><path d="M594.96,1043.0231 C583.42,1029.5231 556.89,995.9231 547.43,962.2031 C542.62,945.0831 542.55,939.3031 547.43,922.2031 C550.64,910.9531 556.38,899.7531 562.56,889.8531 " fill="none" id="checkEnd-&gt;Playing" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="565.43,885.4031,557.1855,890.7909,562.7161,889.6025,563.9045,895.1331,565.43,885.4031" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="139" x="567.43" y="939.9136">[currentYear &lt; endYear]</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="177" x="548.43" y="952.7183">/ currentYear++, recolour map</text><!--MD5=[c5163ea00d6dc177151be0cd3e5352cd]
+link checkEnd to Finished--><path d="M600.43,1062.3131 C600.43,1073.6331 600.43,1091.6731 600.43,1107.0831 " fill="none" id="checkEnd-&gt;Finished" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="600.43,1112.2031,604.43,1103.2031,600.43,1107.2031,596.43,1103.2031,600.43,1112.2031" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="148" x="601.43" y="1091.4136">[currentYear == endYear]</text><!--MD5=[cd3124b762fec8d9d0606e36253125ed]
+link Finished to Playing--><path d="M525.35,1112.1231 C482.59,1094.1131 432.64,1064.7731 407.43,1020.2031 C373.02,959.3831 457.92,908.9031 522.77,880.6631 " fill="none" id="Finished-&gt;Playing" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="527.41,878.6631,517.5617,878.5576,522.8195,880.6448,520.7323,885.9025,527.41,878.6631" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="43" x="457.43" y="991.4136">replay /</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="141" x="408.43" y="1004.2183">currentYear = startYear,</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="76" x="440.93" y="1017.0229">recolour map</text><!--MD5=[38f1f8b7f214ff6bc6d4b705f682283d]
+link *start to Idle--><path d="M611,46.875 C611,62.915 611,96.545 611,121.185 " fill="none" id="*start-&gt;Idle" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="611,126.295,615,117.295,611,121.295,607,117.295,611,126.295" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="54" x="612" y="90.8354">openView</text><!--MD5=[08f3613cf1ebfc864274037554dfedcc]
+link Idle to Loading--><path d="M592.45,177.005 C562.83,215.945 505,291.965 473.57,333.265 " fill="none" id="Idle-&gt;Loading" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="470.43,337.395,479.0682,332.664,473.4619,333.4192,472.7068,327.8129,470.43,337.395" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="541" y="254.8354">selectIndicator</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="79" x="543" y="267.6401">(code, period)</text><!--MD5=[7d364e43dace9a2f8df92504d800134c]
+link Error to Idle--><!--MD5=[94f00f6e3e802e3f1e012c886db4b24b]
+link Error to NoData--><!--MD5=[16aeced528a1d2038d74a35d35cdaf55]
+link NoData to Active--><!--MD5=[6681bef099ebc1218e52c5136cbb39ec]
+reverse link Error to Loading--><path d="M302.77,180.835 C283.19,205.465 262.58,241.705 280,270.625 C299.09,302.315 333.31,323.545 366.24,337.465 " fill="none" id="Error&lt;-Loading" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="306.15,176.675,297.3702,181.1377,302.997,180.5556,303.5791,186.1824,306.15,176.675" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="57" x="281" y="261.3354">loadFailed</text><!--MD5=[870f8e8ea2806d8b2ee94971e3c1ab26]
+link Error to Loading--><path d="M343.35,177.005 C366.22,215.865 410.82,291.655 435.16,333.015 " fill="none" id="Error-&gt;Loading" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="437.74,337.395,436.6019,327.6121,435.1949,333.0912,429.7158,331.6843,437.74,337.395" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="43" x="418" y="254.8354">retry or</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="398" y="267.6401">selectIndicator</text><!--MD5=[acf6983f047e4587d87b0b2d3945c427]
+link Loading to NoData--><path d="M437.5,387.785 C416.72,422.755 377.72,489.745 348,548.625 C296.19,651.285 242.49,777.005 219.1,832.915 " fill="none" id="Loading-&gt;NoData" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="217.07,837.785,224.2134,831.0048,218.986,833.1667,216.8241,827.9392,217.07,837.785" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="400" y="465.8354">dataLoaded</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="43" x="411.5" y="478.6401">[empty]</text><!--MD5=[5d73c623955683a85d1803aef67c1dcc]
+reverse link Loading to NoData--><path d="M367.65,389.765 C335.2,403.955 300.75,424.845 279,454.625 C190.66,575.595 198.46,769.825 204.39,837.735 " fill="none" id="Loading&lt;-NoData" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="372.42,387.725,362.5719,387.6048,367.8265,389.6998,365.7315,394.9544,372.42,387.725" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="83" x="280" y="472.3354">selectIndicator</text><!--MD5=[83b4795c9bec62509bdcd8b541048c53]
+link Loading to Loading--><path d="M564.7,351.795 C608.28,351.315 644.5,354.925 644.5,362.625 C644.5,370.025 611.06,373.655 569.78,373.495 " fill="none" id="Loading-&gt;Loading" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="564.7,373.455,573.6654,377.532,569.6998,373.4979,573.734,369.5323,564.7,373.455" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="673.5" y="360.3354">selectIndicator /</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="137" x="650.5" y="373.1401">cancel previous request</text><!--MD5=[5e86b58d11af2363de64304a09252bb8]
+link Loading to Active--><path d="M564.77,375.925 C657.32,388.895 776.92,413.305 801,454.625 C817.16,482.355 824.33,512.415 825.12,543.225 " fill="none" id="Loading-&gt;Active" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="825.19,548.575,829.061,539.5188,825.1186,543.5755,821.0618,539.6331,825.19,548.575" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="814" y="465.8354">dataLoaded</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="819.5" y="478.6401">[hasData]</text><!--MD5=[bd884f5753592856232d912094a71fd6]
+reverse link Loading to Active--><path d="M486.96,391.595 C505.34,408.085 526.75,430.435 540,454.625 C556.21,484.235 571.06,516.065 584.52,548.415 " fill="none" id="Loading&lt;-Active" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="482.84,387.955,486.9262,396.9162,486.5833,391.2697,492.2298,390.9268,482.84,387.955" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="555" y="465.8354">selectIndicator or</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="566" y="478.6401">changePeriod</text><!--MD5=[86d12920a26e7a6e6b0df510e416084d]
+link Active to *end--><path d="M680,1177.795 C680,1210.175 680,1236.835 680,1252.245 " fill="none" id="Active-&gt;*end" style="stroke: #B8860B; stroke-width: 1.0;"/><polygon fill="#B8860B" points="680,1257.395,684,1248.395,680,1252.395,676,1248.395,680,1257.395" style="stroke: #B8860B; stroke-width: 1.0;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="681" y="1221.8354">closeView</text><!--MD5=[6b35071d3b31c2d088394116003d9864]
+@startuml uc2_state
+
+
+skinparam shadowing false
+skinparam roundCorner 10
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 12
+skinparam defaultFontColor #333333
+skinparam BackgroundColor #FFFFFF
+
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontSize 11
+skinparam ArrowFontColor #B8860B
+
+skinparam titleFontSize 16
+skinparam titleFontStyle bold
+skinparam titleFontColor #333333
+
+skinparam NoteBackgroundColor #FFFFFF
+skinparam NoteBorderColor #9E9E9E
+skinparam NoteFontColor #555555
+
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #6B6B6B
+skinparam ActivityFontColor #333333
+skinparam ActivityDiamondBackgroundColor #F5C242
+skinparam ActivityDiamondBorderColor #B8860B
+skinparam ActivityDiamondFontColor #333333
+skinparam ActivityStartColor #333333
+skinparam ActivityEndColor #333333
+skinparam SwimlaneBorderColor #9E9E9E
+skinparam SwimlaneTitleFontStyle bold
+skinparam SwimlaneTitleFontColor #333333
+
+skinparam StateBackgroundColor #F2F2F2
+skinparam StateBorderColor #6B6B6B
+skinparam StateFontColor #333333
+skinparam StateStartColor #333333
+skinparam StateEndColor #333333
+skinparam StateAttributeFontSize 11
+skinparam StateAttributeFontColor #555555
+skinparam StateBackgroundColor<<choice>> #F5C242
+skinparam StateBorderColor<<choice>> #B8860B
+
+skinparam titleFontColor #B8860B
+skinparam ArrowColor #B8860B
+skinparam ArrowFontColor #B8860B
+
+skinparam nodesep 80
+skinparam ranksep 65
+
+title UC2 - Animation of an indicator over time (1975-2025)
+
+state Idle
+state Loading
+state NoData
+state Error
+
+Loading : entry / fetch all years in one API call
+NoData : no data available for this period
+Error : API unavailable or invalid request
+
+state Active {
+  state Paused
+  state Playing
+  state Finished
+  state checkEnd <<choice>>
+
+  [*] - -> Paused : currentYear = startYear,\nrecolour map
+
+  Paused : scrub(year) / currentYear = year, recolour map
+  Playing : entry / start timer
+  Playing : exit / stop timer
+  Finished : currentYear = endYear
+
+  Paused -right- -> Playing : play\n[currentYear < endYear]
+  Playing -left- -> Paused : pause
+  Playing - -> Paused : scrub(year) /\ncurrentYear = year,\nrecolour map
+  Finished - -> Paused : scrub(year) /\ncurrentYear = year,\nrecolour map
+
+  Playing -down- -> checkEnd : tick
+  checkEnd - -> Playing : [currentYear < endYear]\n/ currentYear++, recolour map
+  checkEnd - -> Finished : [currentYear == endYear]
+
+  Finished - -> Playing : replay /\ncurrentYear = startYear,\nrecolour map
+}
+
+Active : entry / compute global colour scale
+Active : changeSpeed(s) / update timer interval
+
+[*] -down-> Idle : openView
+Idle -down- -> Loading : selectIndicator\n(code, period)
+
+Error -[hidden]right-> Idle
+Error -[hidden]down-> NoData
+NoData -[hidden]right-> Active
+
+Loading -up- -> Error : loadFailed
+Error -down- -> Loading : retry or\nselectIndicator
+
+Loading -down- -> NoData : dataLoaded\n[empty]
+NoData -up- -> Loading : selectIndicator
+
+Loading -right-> Loading : selectIndicator /\ncancel previous request
+
+Loading -down- -> Active : dataLoaded\n[hasData]
+Active -up- -> Loading : selectIndicator or\nchangePeriod
+
+Active -down-> [*] : closeView
+
+note right of Active
+  Defaults: startYear = 1975, endYear = 2025.
+  Global colour scale is fixed on entry so colours
+  keep the same meaning across all frames.
+  Map geometry is never reloaded; only fill colours update.
+end note
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 11:22:07 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.13.1+2-1-24.04.1-Ubuntu
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>
