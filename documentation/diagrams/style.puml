@@ -1,0 +1,32 @@
+' Shared look for all project diagrams.
+' Usage: !include style.puml   (keep this file next to the diagrams)
+
+skinparam shadowing false
+skinparam roundCorner 12
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam ArrowColor #455A64
+skinparam ArrowFontSize 11
+
+skinparam titleFontSize 16
+skinparam titleFontStyle bold
+
+skinparam NoteBackgroundColor #FFF8E1
+skinparam NoteBorderColor #F9A825
+
+' Activity diagrams
+skinparam ActivityBackgroundColor #E3F2FD
+skinparam ActivityBorderColor #1565C0
+skinparam ActivityDiamondBackgroundColor #FFFFFF
+skinparam ActivityDiamondBorderColor #1565C0
+skinparam ActivityStartColor #2E7D32
+skinparam ActivityEndColor #C62828
+skinparam SwimlaneBorderColor #90A4AE
+skinparam SwimlaneTitleFontStyle bold
+
+' State diagrams
+skinparam StateBackgroundColor #E8F5E9
+skinparam StateBorderColor #2E7D32
+skinparam StateStartColor #2E7D32
+skinparam StateEndColor #C62828
+skinparam StateAttributeFontSize 11

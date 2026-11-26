@@ -1,0 +1,69 @@
+@startuml uc1_activity
+!include style.puml
+
+title UC1 - Display the world map for one indicator and one year\n(data available from 1975 to 2025)
+
+|#E3F2FD|User|
+|#E8F5E9|Front-end|
+|#FFF3E0|API|
+|#F3E5F5|Database|
+
+|User|
+start
+:Choose an indicator and a year;
+note right
+  Preconditions:
+  - indicator list already loaded
+  - country geometry (GISCO) loaded once and cached
+  - year slider limited to 1975-2025
+end note
+
+|Front-end|
+:Request the observations\n""GET /indicators/{code}/observations?year={y}"";
+
+|API|
+:Validate the indicator code and the year;
+
+if (Indicator known and year in 1975-2025?) then (no)
+  :Return an error\n(400 / 404);
+  |Front-end|
+  :Show an error message;
+  stop
+else (yes)
+endif
+
+|Database|
+:Read the observations of the indicator\nfor the year (one value per ISO3 code);
+
+if (Query succeeded?) then (no)
+  |API|
+  :Return an error (503);
+  |Front-end|
+  :Show an error message with a retry button;
+  stop
+else (yes)
+endif
+
+|API|
+:Return the values by ISO3 code\nwith unit and colour-scale bounds;
+
+|Front-end|
+:Join the values to the country geometry\non the ISO3 code;
+:Apply the colour scale;
+
+if (At least one country has a value?) then (no)
+  :Show the message "No data for this year";
+else (yes)
+endif
+
+:Draw the map and the legend\n(countries without value in grey);
+
+|User|
+:Hover (desktop) or tap (smartphone) a country;
+
+|Front-end|
+:Show the tooltip\n(country, value, unit, year);
+
+stop
+
+@enduml

@@ -1,0 +1,66 @@
+@startuml uc2_state
+!include style.puml
+left to right direction
+
+title UC2 - Animation of an indicator over time (state of the player, 1975 to 2025)
+
+state Idle
+state Loading
+state NoData
+state Error
+
+Loading : entry / request ALL years of the indicator in ONE call
+Loading : entry / fix the colour scale for the whole period
+NoData : no value for this indicator in the period
+Error : back-end unavailable or invalid request
+
+state Active {
+  state Ready
+  state Playing
+  state Paused
+  state Finished
+  state checkEnd <<choice>>
+
+  Ready : entry / currentYear = startYear, draw map
+  Playing : entry / start timer
+  Playing : exit / stop timer
+  Finished : currentYear = endYear
+}
+
+Active : changeSpeed(s) / update the timer interval
+Active : only recolour the map, geometry is never reloaded
+
+[*] --> Idle : open the animation view
+
+Idle --> Loading : selectIndicator(code, startYear, endYear)
+Loading --> Loading : selectIndicator / cancel the previous request
+Loading --> Ready : dataLoaded [at least one value]
+Loading --> NoData : dataLoaded [no value]
+Loading --> Error : loadFailed
+
+NoData --> Loading : selectIndicator
+Error --> Loading : retry
+Error --> Loading : selectIndicator
+
+Ready --> Playing : play
+Playing --> Paused : pause
+Paused --> Playing : play
+Playing --> checkEnd : tick
+checkEnd --> Playing : [currentYear < endYear]\n/ currentYear++, recolour map
+checkEnd --> Finished : [currentYear = endYear]
+Finished --> Playing : replay / currentYear = startYear
+
+Ready --> Paused : scrub(year) / draw year
+Playing --> Paused : scrub(year) / draw year
+Finished --> Paused : scrub(year) / draw year
+Paused --> Paused : scrub(year) / draw year
+
+Active --> Loading : selectIndicator or changePeriod\n(leaves any inner state)
+
+note bottom of Active
+  Defaults: startYear = 1975, endYear = 2025.
+  Colour scale is NOT recomputed per year,
+  otherwise colours change meaning between frames.
+end note
+
+@enduml
