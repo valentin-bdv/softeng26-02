@@ -1,0 +1,84 @@
+@startuml uc4_activity
+!include ../style.puml
+
+skinparam titleFontColor #B8860B
+title UC4 - Compare several countries on one or more indicators
+
+|#FAFAFA|User|
+|#F0F0F0|Front-end|
+|#E6E6E6|API|
+|#DCDCDC|Database|
+
+|User|
+start
+repeat
+  :Choose 2 to 5 countries,\none or more indicators and a period;
+  note right
+    Preconditions:
+    - country list (ISO3 code, name) already loaded
+    - indicator list already loaded
+    - period from 1975 to the latest available year
+    - optional: one country preselected from its profile (UC3)
+  end note
+  |Front-end|
+  :Check the selection;
+backward :Show a hint\n("Select 2 to 5 different countries\nand at least one indicator");
+repeat while (2 to 5 different countries\nand at least one indicator?) is (no) not (yes)
+
+|Front-end|
+:Request the observations\n""GET /api/observations?countries={iso3,...}""\n""&indicators={code,...}&from={y1}&to={y2}"";
+
+|API|
+:Validate the parameters;
+
+if (Valid input?\n(ISO3 format, from <= to,\nperiod within 1975 to latest year)) then (no)
+  :Return an error (400);
+  |Front-end|
+  :Show the error message;
+  stop
+else (yes)
+endif
+
+|Database|
+:Read the Observations\nof the selected Countries and Indicators\nfor the period;
+
+if (Query succeeded?) then (no)
+  |API|
+  :Return an error (503);
+  |Front-end|
+  :Show an error message with a retry button;
+  stop
+else (yes)
+endif
+
+|API|
+if (All Countries and Indicators found?) then (no)
+  :Return an error (404);
+  |Front-end|
+  :Show the message "Unknown country or indicator";
+  stop
+else (yes)
+endif
+
+|API|
+:Return one time series per Country and Indicator\n(year, value, unit);
+
+|Front-end|
+while (Indicator left to display?) is (yes)
+  :Draw one line chart for the indicator\n(one line per country, own axis and unit,\nmissing years as gaps, not as 0);
+  if (Country without any value\nfor this indicator?) then (yes)
+    :Mark the country "No data" in the legend;
+  else (no)
+  endif
+endwhile (no)
+
+|User|
+:Hover (desktop) or tap (smartphone)\na point of a chart;
+
+|Front-end|
+:Show the tooltip\n(country, indicator, year, value, unit);
+
+|User|
+stop
+
+@enduml

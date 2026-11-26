@@ -1,0 +1,84 @@
+@startuml uc4_activity
+!include ../style.puml
+
+skinparam titleFontColor #B8860B
+title UC4 - Compare several countries on one or more indicators
+
+|#FAFAFA|User|
+|#F0F0F0|View|
+|#E6E6E6|Controller|
+|#DCDCDC|Model|
+
+|User|
+start
+repeat
+  :Choose 2 to 5 countries,\none or more indicators and a period;
+  note right
+    Preconditions:
+    - desktop view (desktop.html) or
+      smartphone view (mobile.html) open
+    - country list (ISO3 code, name) already loaded
+    - indicator list already loaded
+    - period from 1975 to the latest available year
+    - optional: one country preselected from its profile (UC3)
+  end note
+  |View|
+  :Check the selection;
+backward :Show a hint\n("Select 2 to 5 different countries\nand at least one indicator");
+repeat while (2 to 5 different countries\nand at least one indicator?) is (no) not (yes)
+
+|View|
+:Send the request to the controller\n""GET /api/observations?countries={iso3,...}""\n""&indicators={code,...}&from={y1}&to={y2}"";
+
+|Controller|
+:Validate the parameters;
+
+if (Valid input?\n(ISO3 format, from <= to,\nperiod within 1975 to latest year)) then (no)
+  :Return an error (400);
+  |View|
+  :Show the error message;
+  stop
+else (yes)
+endif
+
+|Model|
+:Load the Observations\nof the selected Countries and Indicators\nfor the period;
+
+if (Query succeeded?) then (no)
+  |Controller|
+  :Return an error (503);
+  |View|
+  :Show an error message with a retry button;
+  stop
+else (yes)
+endif
+
+|Controller|
+if (All Countries and Indicators found?) then (no)
+  :Return an error (404);
+  |View|
+  :Show the message "Unknown country or indicator";
+  stop
+else (yes)
+endif
+
+|Controller|
+:Build the comparison:\n- one time series per Country and Indicator (year, value, unit)\n- missing years kept empty (gaps, not 0)\n- countries without any value marked "No data";
+
+|View|
+if (Which view is open?) then (desktop.html)
+  :Desktop view: one line chart per indicator,\nall charts side by side,\none line per country;
+else (mobile.html)
+  :Smartphone view: one chart at a time\n(swipe between indicators),\none line per country;
+endif
+
+|User|
+:Hover (desktop) or tap (smartphone)\na point of a chart;
+
+|View|
+:Show the tooltip\n(country, indicator, year, value, unit);
+
+|User|
+stop
+
+@enduml
