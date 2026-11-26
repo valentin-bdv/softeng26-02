@@ -91,10 +91,10 @@ Principle: each member owns one or two use cases **end to end** (SRS text + acti
 
 | Member | Responsibility | Files to deliver |
 |---|---|---|
-| **A** — Coordinator | SRS general sections (introduction, scope, glossary, non-functional requirements), consistency of the whole SRS, GitHub Project board, final review. | `srs-softeng26-XX.md` (general parts) |
-| **B** — Data | Explore World Bank API and GISCO join; conceptual data model for both architectures; data section of the SRS. | data-conceptual `.puml` (layered + mvc) |
-| **C** | UC1 (map) and UC2 (animation): SRS description + activity diagrams. | 4 activity `.puml` |
-| **D** | UC3 (country profile) and UC4 (comparison): SRS description + activity diagrams. | 4 activity `.puml` |
+| **Valentin** — Coordinator | CLAUDE.md Conception, SRS general sections (introduction, scope, glossary, non-functional requirements), consistency of the whole SRS, GitHub Project board, final review. | `srs-softeng26-XX.md` (general parts) |
+| **William** — Data | Explore World Bank API and GISCO join; conceptual data model for both architectures; data section of the SRS. | data-conceptual `.puml` (layered + mvc) |
+| **Anthony** | UC1 (map) and UC2 (animation): SRS description + activity diagrams. | 4 activity `.puml` |
+| **Jonah** | UC3 (country profile) and UC4 (comparison): SRS description + activity diagrams. | 4 activity `.puml` |
 | **E** | UC5 (custom index): SRS description + activity diagrams + Custom index state diagram. | 2 activity + 2 state `.puml` |
 | **F** | UC6 (export) and UC7 (admin import): SRS description + activity diagrams + Import job state diagram. | 4 activity + 2 state `.puml` |
 
