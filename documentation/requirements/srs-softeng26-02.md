@@ -225,7 +225,71 @@ Each use case is described with the template below, and has an activity diagram 
 
 ## 4. Data requirements
 
-*To be written by William: data sources, conceptual data model, known pitfalls (aggregates, missing values, yearly data).*
+### 4.1 Data sources
+
+| Source | Content used | Access | Format | Licence |
+|---|---|---|---|---|
+| World Bank Indicators API v2 [3] | Country list (ISO3 code, name, region, income group, capital) and yearly indicator time series | `https://api.worldbank.org/v2/`, `format=json`, paginated, no key | JSON | CC BY 4.0 |
+| GISCO Countries, Eurostat [4] | Country boundaries, release 2024, scale 1:20M, EPSG:4326 (`CNTR_RG_20M_2024_4326.geojson`) | Bulk HTTP download, no key | GeoJSON (MultiPolygon) | © EuroGeographics for the administrative boundaries |
+
+The two sources are joined on the **ISO3 country code**: `id` in the World Bank country list, `ISO3_CODE` in GISCO. The 2-letter codes are never used for the join, because they differ between the sources (Greece is `GR` at the World Bank and `EL` in GISCO).
+
+Observations from an exploration of both sources (November 2026):
+
+- The World Bank country list returns **296 entries**: **217 economies** and **79 aggregates** (World, regions, income groups...).
+- GISCO 2024 (1:20M) contains **263 features**, all of type MultiPolygon, each with an ISO3 code.
+- **214** of the 217 economies have a geometry. The 3 without one are Channel Islands (`CHI`, split in GISCO into Jersey `JEY` and Guernsey `GGY`), Kosovo (`XKX`) and Saint Martin (`MAF`, too small for the 1:20M scale).
+- **49** GISCO features have no World Bank economy: small territories (e.g. Antarctica `ATA`, Falkland Islands `FLK`, Vatican `VAT`) and disputed areas with codes starting with `X` (e.g. Aksai Chin `XC`, Abyei `XU`).
+
+### 4.2 Conceptual data model
+
+The conceptual data model is the same in both architectures. Only its place in the architecture differs: in the layered architecture the entities live in the data layer and are reached only through the backend repositories; in the MVC architecture they form the Model, used by the Controllers.
+
+![Conceptual data model](../diagram-as-code/layered/softeng26-02-data-conceptual.svg)
+
+*Sources: [layered](../diagram-as-code/layered/softeng26-02-data-conceptual.puml), [MVC](../diagram-as-code/mvc/softeng26-02-data-conceptual.puml).*
+
+| Entity | Description | Identifier |
+|---|---|---|
+| **Country** | A World Bank economy with its boundary: name, region, income group, capital city, geometry (MultiPolygon, EPSG:4326). | ISO3 code |
+| **Indicator** | A World Bank indicator: name, unit, topic, description, source. | World Bank code (e.g. `SP.DYN.LE00.IN`) |
+| **Observation** | The value of one indicator for one country and one year. | Country + Indicator + year |
+| **CustomIndex** | An index built by a user from several weighted indicators (UC5), with a status: Draft, Computed, Published, Archived. | Generated identifier |
+| **IndexComponent** | One indicator of a custom index, with its weight, its normalisation method (min-max or z-score) and its direction (higher or lower is better). | CustomIndex + Indicator |
+| **ImportJob** | One import of World Bank or GISCO data (UC7), with its status (Scheduled, Running, Completed, Failed), dates, attempt number, number of rows imported and error message. | Generated identifier |
+
+Relationships:
+
+- A Country has 0..* Observations; an Indicator is measured by 0..* Observations; each Observation belongs to exactly one Country and one Indicator.
+- A CustomIndex is composed of 1..* IndexComponents (deleting the index deletes its components); each IndexComponent refers to exactly one Indicator.
+- An ImportJob loads 0..* Countries and Observations; each of them records the job that last loaded it.
+
+### 4.3 Data requirements
+
+| ID | Requirement |
+|---|---|
+| DR-01 | Only World Bank economies are stored as Country. Aggregates, identified by `region.id == "NA"`, are never stored as countries (see NFR-REL-01). |
+| DR-02 | Country and geometry are joined on the ISO3 code only. A Country without a GISCO geometry (Channel Islands, Kosovo, Saint Martin) is stored without geometry: its data stays available in the API, country profiles, comparisons and exports, but it is not drawn on the map. |
+| DR-03 | GISCO features without a matching World Bank economy (small territories, disputed areas) are not stored as Country. |
+| DR-04 | A missing value (`"value": null` in the World Bank response) creates no Observation. A value is never replaced by 0 or an empty string (see NFR-USE-02). |
+| DR-05 | There is at most one Observation per country, indicator and year. Re-importing an indicator replaces the existing values instead of duplicating them. |
+| DR-06 | The application stores the period **1975 to the latest available year** (about 50 years). Data is yearly: there is no real-time data, and the latest year is often incomplete (most countries have no value yet). |
+| DR-07 | The application uses a curated list of indicators chosen by the team (life expectancy, GDP per capita, CO₂ emissions, access to electricity...), not all of the ~16,000 World Bank indicators. |
+| DR-08 | The weights of the IndexComponents of one CustomIndex are greater than 0 and sum to 1. The ranking of a custom index is computed on demand from the Observations, not stored. |
+| DR-09 | Each import is recorded as an ImportJob before it starts, and its status is updated when it ends (see NFR-REL-03). A failed import leaves the previous data unchanged (see NFR-REL-02). |
+| DR-10 | The full database (countries, geometries, indicators, observations) is delivered as a plain SQL dump, `softeng26-02-dump.sql`, in `layered/data` and `mvc/data` (see NFR-MAIN-04). |
+
+### 4.4 Known data pitfalls
+
+| Pitfall | Example | Handling |
+|---|---|---|
+| Aggregates mixed with countries | `WLD` (World), `EUU` (European Union), `HIC` (High income) appear in the country list and in indicator responses. | Filtered out on import (DR-01). |
+| Different 2-letter codes | Greece is `GR` at the World Bank, `EL` in GISCO. | Join on ISO3 only (DR-02). |
+| Missing values | Small countries and old years often have no value; the latest year is mostly empty (e.g. life expectancy for Greece: `null` in 2025, 81.8 in 2024). | No Observation row; shown as "No data" in grey (DR-04, NFR-USE-02). |
+| Countries without geometry | `CHI`, `XKX`, `MAF` have no GISCO feature at 1:20M. | Stored without geometry, not drawn on the map (DR-02). |
+| Territories without data | Antarctica, Falkland Islands, disputed areas. | Not stored as countries; may be drawn in grey as background if needed (DR-03). |
+| Yearly data, irregular updates | The World Bank updates indicators a few times a year. | Imports are run by the administrator (UC7), not continuously (DR-06). |
+| Units differ between indicators | Years, current US$, % of population, metric tons per capita. | The unit is stored in Indicator and shown in every legend (NFR-USE-01). |
 
 ---
 
