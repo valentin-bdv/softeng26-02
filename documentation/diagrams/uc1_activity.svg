@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1387px" preserveAspectRatio="none" style="width:1648px;height:1387px;" version="1.1" viewBox="0 0 1648 1387" width="1648px" zoomAndPan="magnify"><defs/><g><text fill="#333333" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="526" x="560.25" y="24.8516">UC1 - Display the world map for one indicator and one year</text><text fill="#333333" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="306" x="670.25" y="43.4766">(data available from 1975 to 2025)</text><rect fill="#FAFAFA" height="1327.3945" style="stroke: #FAFAFA; stroke-width: 1.0;" width="656.5" x="10" y="48.5801"/><ellipse cx="178" cy="77.5488" fill="#333333" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><path d="M306.5,97.5488 L306.5,126.4863 L286.5,130.4863 L306.5,134.4863 L306.5,163.4238 A0,0 0 0 0 306.5,163.4238 L656.5,163.4238 A0,0 0 0 0 656.5,163.4238 L656.5,107.5488 L646.5,97.5488 L306.5,97.5488 A0,0 0 0 0 306.5,97.5488 " fill="#FFFFFF" style="stroke: #9E9E9E; stroke-width: 1.0;"/><path d="M646.5,97.5488 L646.5,107.5488 L656.5,107.5488 L646.5,97.5488 " fill="#FFFFFF" style="stroke: #9E9E9E; stroke-width: 1.0;"/><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="90" x="312.5" y="113.6875">Preconditions:</text><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="182" x="312.5" y="127.6563">- indicator list already loaded</text><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="329" x="312.5" y="141.625">- country geometry (GISCO) loaded once and cached</text><text fill="#555555" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="207" x="312.5" y="155.5938">- year slider limited to 1975-2025</text><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="217" x="69.5" y="113.502"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="197" x="79.5" y="134.6406">Choose an indicator and a year</text><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="316" x="20" y="1232.0684"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="296" x="30" y="1253.207">Hover (desktop) or tap (smartphone) a country</text><rect fill="#F0F0F0" height="1327.3945" style="stroke: #F0F0F0; stroke-width: 1.0;" width="349" x="666.5" y="48.5801"/><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="328" x="676.5" y="183.4238"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="162" x="686.5" y="204.5625">Request the observations</text><text fill="#333333" font-family="monospace" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="308" x="686.5" y="218.5313">GET /indicators/{code}/observations?year={y}</text><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="169" x="756" y="421.6699"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="149" x="766" y="442.8086">Show an error message</text><ellipse cx="840.5" cy="486.6387" fill="#FFFFFF" rx="11" ry="11" style="stroke: #333333; stroke-width: 1.0;"/><ellipse cx="840.5" cy="486.6387" fill="#333333" rx="6" ry="6" style="stroke: #999999; stroke-width: 1.0;"/><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="289" x="696" y="709.9473"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="269" x="706" y="731.0859">Show an error message with a retry button</text><ellipse cx="840.5" cy="774.916" fill="#FFFFFF" rx="11" ry="11" style="stroke: #333333; stroke-width: 1.0;"/><ellipse cx="840.5" cy="774.916" fill="#333333" rx="6" ry="6" style="stroke: #999999; stroke-width: 1.0;"/><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="267" x="707" y="895.8535"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="247" x="717" y="916.9922">Join the values to the country geometry</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="108" x="717" y="930.9609">on the ISO3 code</text><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="158" x="761.5" y="963.791"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="138" x="771.5" y="984.9297">Apply the colour scale</text><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="282" x="699.5" y="1066.1621"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="262" x="709.5" y="1087.3008">Show the message "No data for this year"</text><polygon fill="#F5C242" points="736,1017.7598,945,1017.7598,957,1029.7598,945,1041.7598,736,1041.7598,724,1029.7598,736,1017.7598" style="stroke: #B8860B; stroke-width: 1.5;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="844.5" y="1051.9702">no</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="209" x="736" y="1033.9141">At least one country has a value?</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="20" x="957" y="1027.1655">yes</text><polygon fill="#F5C242" points="840.5,1120.1309,852.5,1132.1309,840.5,1144.1309,828.5,1132.1309,840.5,1120.1309" style="stroke: #B8860B; stroke-width: 1.5;"/><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="222" x="729.5" y="1164.1309"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="187" x="739.5" y="1185.2695">Draw the map and the legend</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="202" x="739.5" y="1199.2383">(countries without value in grey)</text><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="185" x="748" y="1286.0371"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="758" y="1307.1758">Show the tooltip</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="165" x="758" y="1321.1445">(country, value, unit, year)</text><ellipse cx="840.5" cy="1364.9746" fill="#FFFFFF" rx="11" ry="11" style="stroke: #333333; stroke-width: 1.0;"/><ellipse cx="840.5" cy="1364.9746" fill="#333333" rx="6" ry="6" style="stroke: #999999; stroke-width: 1.0;"/><rect fill="#E6E6E6" height="1327.3945" style="stroke: #E6E6E6; stroke-width: 1.0;" width="319" x="1015.5" y="48.5801"/><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="274" x="1028" y="251.3613"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="254" x="1038" y="272.5">Validate the indicator code and the year</text><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="117" x="1106.5" y="353.7324"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="1116.5" y="374.8711">Return an error</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="70" x="1116.5" y="388.8398">(400 / 404)</text><polygon fill="#F5C242" points="1039.5,305.3301,1290.5,305.3301,1302.5,317.3301,1290.5,329.3301,1039.5,329.3301,1027.5,317.3301,1039.5,305.3301" style="stroke: #B8860B; stroke-width: 1.5;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="1169" y="339.5405">no</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="251" x="1039.5" y="321.4844">Indicator known and year in 1975-2025?</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="20" x="1302.5" y="314.7358">yes</text><rect fill="#FFFFFF" height="33.9688" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="155" x="1087.5" y="655.9785"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="135" x="1097.5" y="677.1172">Return an error (503)</text><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="232" x="1049" y="827.916"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="196" x="1059" y="849.0547">Return the values by ISO3 code</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="212" x="1059" y="863.0234">with unit and colour-scale bounds</text><rect fill="#DCDCDC" height="1327.3945" style="stroke: #DCDCDC; stroke-width: 1.0;" width="302" x="1334.5" y="48.5801"/><rect fill="#FFFFFF" height="47.9375" rx="12.5" ry="12.5" style="stroke: #6B6B6B; stroke-width: 1.5;" width="262" x="1344.5" y="539.6387"/><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="242" x="1354.5" y="560.7773">Read the observations of the indicator</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="240" x="1354.5" y="574.7461">for the year (one value per ISO3 code)</text><polygon fill="#F5C242" points="1418,607.5762,1533,607.5762,1545,619.5762,1533,631.5762,1418,631.5762,1406,619.5762,1418,607.5762" style="stroke: #B8860B; stroke-width: 1.5;"/><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="14" x="1479.5" y="641.7866">no</text><text fill="#333333" font-family="Helvetica" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="115" x="1418" y="623.7305">Query succeeded?</text><text fill="#B8860B" font-family="Helvetica" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="20" x="1545" y="616.9819">yes</text><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="178" x2="178" y1="87.5488" y2="113.502"/><polygon fill="#6B6B6B" points="174,103.502,178,113.502,182,103.502,178,107.502" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="455.6387" y2="475.6387"/><polygon fill="#6B6B6B" points="836.5,465.6387,840.5,475.6387,844.5,465.6387,840.5,469.6387" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="743.916" y2="763.916"/><polygon fill="#6B6B6B" points="836.5,753.916,840.5,763.916,844.5,753.916,840.5,757.916" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="943.791" y2="963.791"/><polygon fill="#6B6B6B" points="836.5,953.791,840.5,963.791,844.5,953.791,840.5,957.791" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="1041.7598" y2="1066.1621"/><polygon fill="#6B6B6B" points="836.5,1056.1621,840.5,1066.1621,844.5,1056.1621,840.5,1060.1621" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="957" x2="991.5" y1="1029.7598" y2="1029.7598"/><polygon fill="#6B6B6B" points="987.5,1073.1465,991.5,1083.1465,995.5,1073.1465,991.5,1077.1465" style="stroke: #6B6B6B; stroke-width: 1.5;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="991.5" x2="991.5" y1="1029.7598" y2="1132.1309"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="991.5" x2="852.5" y1="1132.1309" y2="1132.1309"/><polygon fill="#6B6B6B" points="862.5,1128.1309,852.5,1132.1309,862.5,1136.1309,858.5,1132.1309" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="1100.1309" y2="1120.1309"/><polygon fill="#6B6B6B" points="836.5,1110.1309,840.5,1120.1309,844.5,1110.1309,840.5,1114.1309" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="997.7598" y2="1017.7598"/><polygon fill="#6B6B6B" points="836.5,1007.7598,840.5,1017.7598,844.5,1007.7598,840.5,1011.7598" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="1144.1309" y2="1164.1309"/><polygon fill="#6B6B6B" points="836.5,1154.1309,840.5,1164.1309,844.5,1154.1309,840.5,1158.1309" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="1333.9746" y2="1353.9746"/><polygon fill="#6B6B6B" points="836.5,1343.9746,840.5,1353.9746,844.5,1343.9746,840.5,1347.9746" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="329.3301" y2="353.7324"/><polygon fill="#6B6B6B" points="1161,343.7324,1165,353.7324,1169,343.7324,1165,347.7324" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1302.5" x2="1475.5" y1="317.3301" y2="317.3301"/><polygon fill="#6B6B6B" points="1471.5,430.1855,1475.5,440.1855,1479.5,430.1855,1475.5,434.1855" style="stroke: #6B6B6B; stroke-width: 1.5;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1475.5" x2="1475.5" y1="317.3301" y2="539.6387"/><polygon fill="#6B6B6B" points="1471.5,529.6387,1475.5,539.6387,1479.5,529.6387,1475.5,533.6387" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="285.3301" y2="305.3301"/><polygon fill="#6B6B6B" points="1161,295.3301,1165,305.3301,1169,295.3301,1165,299.3301" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1545" x2="1620.5" y1="619.5762" y2="619.5762"/><polygon fill="#6B6B6B" points="1616.5,716.6973,1620.5,726.6973,1624.5,716.6973,1620.5,720.6973" style="stroke: #6B6B6B; stroke-width: 1.5;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1620.5" x2="1620.5" y1="619.5762" y2="812.916"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1620.5" x2="1165" y1="812.916" y2="812.916"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="812.916" y2="827.916"/><polygon fill="#6B6B6B" points="1161,817.916,1165,827.916,1169,817.916,1165,821.916" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1475.5" x2="1475.5" y1="587.5762" y2="607.5762"/><polygon fill="#6B6B6B" points="1471.5,597.5762,1475.5,607.5762,1479.5,597.5762,1475.5,601.5762" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="178" x2="178" y1="147.4707" y2="168.4238"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="178" x2="840.5" y1="168.4238" y2="168.4238"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="168.4238" y2="183.4238"/><polygon fill="#6B6B6B" points="836.5,173.4238,840.5,183.4238,844.5,173.4238,840.5,177.4238" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="231.3613" y2="236.3613"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="1165" y1="236.3613" y2="236.3613"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="236.3613" y2="251.3613"/><polygon fill="#6B6B6B" points="1161,241.3613,1165,251.3613,1169,241.3613,1165,245.3613" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="401.6699" y2="406.6699"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="840.5" y1="406.6699" y2="406.6699"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="406.6699" y2="421.6699"/><polygon fill="#6B6B6B" points="836.5,411.6699,840.5,421.6699,844.5,411.6699,840.5,415.6699" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="689.9473" y2="694.9473"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="840.5" y1="694.9473" y2="694.9473"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="694.9473" y2="709.9473"/><polygon fill="#6B6B6B" points="836.5,699.9473,840.5,709.9473,844.5,699.9473,840.5,703.9473" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1475.5" x2="1475.5" y1="631.5762" y2="643.7773"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1475.5" x2="1165" y1="643.7773" y2="643.7773"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="643.7773" y2="655.9785"/><polygon fill="#6B6B6B" points="1161,645.9785,1165,655.9785,1169,645.9785,1165,649.9785" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="1165" y1="875.8535" y2="880.8535"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="1165" x2="840.5" y1="880.8535" y2="880.8535"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="880.8535" y2="895.8535"/><polygon fill="#6B6B6B" points="836.5,885.8535,840.5,895.8535,844.5,885.8535,840.5,889.8535" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="1212.0684" y2="1217.0684"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="178" y1="1217.0684" y2="1217.0684"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="178" x2="178" y1="1217.0684" y2="1232.0684"/><polygon fill="#6B6B6B" points="174,1222.0684,178,1232.0684,182,1222.0684,178,1226.0684" style="stroke: #6B6B6B; stroke-width: 1.0;"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="178" x2="178" y1="1266.0371" y2="1271.0371"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="178" x2="840.5" y1="1271.0371" y2="1271.0371"/><line style="stroke: #6B6B6B; stroke-width: 1.5;" x1="840.5" x2="840.5" y1="1271.0371" y2="1286.0371"/><polygon fill="#6B6B6B" points="836.5,1276.0371,840.5,1286.0371,844.5,1276.0371,840.5,1280.0371" style="stroke: #6B6B6B; stroke-width: 1.0;"/><text fill="#333333" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="33" x="321.75" y="59.7188">User</text><text fill="#333333" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="70" x="806" y="59.7188">Front-end</text><text fill="#333333" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="22" x="1162" y="59.7188">API</text><text fill="#333333" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="69" x="1459.75" y="59.7188">Database</text><line style="stroke: #9E9E9E; stroke-width: 2.0;" x1="10" x2="10" y1="48.5801" y2="1375.9746"/><line style="stroke: #9E9E9E; stroke-width: 2.0;" x1="666.5" x2="666.5" y1="48.5801" y2="1375.9746"/><line style="stroke: #9E9E9E; stroke-width: 2.0;" x1="1015.5" x2="1015.5" y1="48.5801" y2="1375.9746"/><line style="stroke: #9E9E9E; stroke-width: 2.0;" x1="1334.5" x2="1334.5" y1="48.5801" y2="1375.9746"/><line style="stroke: #9E9E9E; stroke-width: 2.0;" x1="1636.5" x2="1636.5" y1="48.5801" y2="1375.9746"/><!--MD5=[90934c96f6c62798425ebe2ef6180556]
+@startuml uc1_activity
+
+
+skinparam shadowing false
+skinparam roundCorner 10
+skinparam defaultFontName Helvetica
+skinparam defaultFontSize 12
+skinparam defaultFontColor #333333
+skinparam BackgroundColor #FFFFFF
+
+skinparam ArrowColor #6B6B6B
+skinparam ArrowFontSize 11
+skinparam ArrowFontColor #B8860B
+
+skinparam titleFontSize 16
+skinparam titleFontStyle bold
+skinparam titleFontColor #333333
+
+skinparam NoteBackgroundColor #FFFFFF
+skinparam NoteBorderColor #9E9E9E
+skinparam NoteFontColor #555555
+
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #6B6B6B
+skinparam ActivityFontColor #333333
+skinparam ActivityDiamondBackgroundColor #F5C242
+skinparam ActivityDiamondBorderColor #B8860B
+skinparam ActivityDiamondFontColor #333333
+skinparam ActivityStartColor #333333
+skinparam ActivityEndColor #333333
+skinparam SwimlaneBorderColor #9E9E9E
+skinparam SwimlaneTitleFontStyle bold
+skinparam SwimlaneTitleFontColor #333333
+
+skinparam StateBackgroundColor #F2F2F2
+skinparam StateBorderColor #6B6B6B
+skinparam StateFontColor #333333
+skinparam StateStartColor #333333
+skinparam StateEndColor #333333
+skinparam StateAttributeFontSize 11
+skinparam StateAttributeFontColor #555555
+skinparam StateBackgroundColor<<choice>> #F5C242
+skinparam StateBorderColor<<choice>> #B8860B
+
+title UC1 - Display the world map for one indicator and one year\n(data available from 1975 to 2025)
+
+|#FAFAFA|User|
+|#F0F0F0|Front-end|
+|#E6E6E6|API|
+|#DCDCDC|Database|
+
+|User|
+start
+:Choose an indicator and a year;
+note right
+  Preconditions:
+  - indicator list already loaded
+  - country geometry (GISCO) loaded once and cached
+  - year slider limited to 1975-2025
+end note
+
+|Front-end|
+:Request the observations\n""GET /indicators/{code}/observations?year={y}"";
+
+|API|
+:Validate the indicator code and the year;
+
+if (Indicator known and year in 1975-2025?) then (no)
+  :Return an error\n(400 / 404);
+  |Front-end|
+  :Show an error message;
+  stop
+else (yes)
+endif
+
+|Database|
+:Read the observations of the indicator\nfor the year (one value per ISO3 code);
+
+if (Query succeeded?) then (no)
+  |API|
+  :Return an error (503);
+  |Front-end|
+  :Show an error message with a retry button;
+  stop
+else (yes)
+endif
+
+|API|
+:Return the values by ISO3 code\nwith unit and colour-scale bounds;
+
+|Front-end|
+:Join the values to the country geometry\non the ISO3 code;
+:Apply the colour scale;
+
+if (At least one country has a value?) then (no)
+  :Show the message "No data for this year";
+else (yes)
+endif
+
+:Draw the map and the legend\n(countries without value in grey);
+
+|User|
+:Hover (desktop) or tap (smartphone) a country;
+
+|Front-end|
+:Show the tooltip\n(country, value, unit, year);
+
+stop
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 11:22:07 CET 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 21.0.13.1+2-1-24.04.1-Ubuntu
+Operating System: Linux
+Default Encoding: UTF-8
+Language: en
+Country: null
+--></g></svg>

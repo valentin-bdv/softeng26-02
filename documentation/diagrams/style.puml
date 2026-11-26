@@ -1,32 +1,55 @@
-' Shared look for all project diagrams.
-' Usage: !include style.puml   (keep this file next to the diagrams)
+' Style partagé pour tous les diagrammes du projet : sobre, nuances de gris,
+' jaune doré réservé aux décisions (losanges) et aux libellés yes/no.
+' Usage : !include style.puml   (garder ce fichier à côté des diagrammes)
+
+' --- Palette -------------------------------------------------------------
+' Texte            #333333
+' Traits / bordure #6B6B6B
+' Fond clair       #F2F2F2
+' Jaune doré       #F5C242 (fond)   #B8860B (bordure et texte)
 
 skinparam shadowing false
-skinparam roundCorner 12
-skinparam defaultFontName Arial
+skinparam roundCorner 10
+skinparam defaultFontName Helvetica
 skinparam defaultFontSize 12
-skinparam ArrowColor #455A64
+skinparam defaultFontColor #333333
+skinparam BackgroundColor #FFFFFF
+
+skinparam ArrowColor #6B6B6B
 skinparam ArrowFontSize 11
+' Libellés des flèches en doré foncé (yes/no des décisions).
+' Les diagrammes d'états repassent à #333333 (voir uc2_state.puml).
+skinparam ArrowFontColor #B8860B
 
 skinparam titleFontSize 16
 skinparam titleFontStyle bold
+skinparam titleFontColor #333333
 
-skinparam NoteBackgroundColor #FFF8E1
-skinparam NoteBorderColor #F9A825
+skinparam NoteBackgroundColor #FFFFFF
+skinparam NoteBorderColor #9E9E9E
+skinparam NoteFontColor #555555
 
-' Activity diagrams
-skinparam ActivityBackgroundColor #E3F2FD
-skinparam ActivityBorderColor #1565C0
-skinparam ActivityDiamondBackgroundColor #FFFFFF
-skinparam ActivityDiamondBorderColor #1565C0
-skinparam ActivityStartColor #2E7D32
-skinparam ActivityEndColor #C62828
-skinparam SwimlaneBorderColor #90A4AE
+' --- Diagrammes d'activité ------------------------------------------------
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityBorderColor #6B6B6B
+skinparam ActivityFontColor #333333
+skinparam ActivityDiamondBackgroundColor #F5C242
+skinparam ActivityDiamondBorderColor #B8860B
+skinparam ActivityDiamondFontColor #333333
+skinparam ActivityStartColor #333333
+skinparam ActivityEndColor #333333
+skinparam SwimlaneBorderColor #9E9E9E
 skinparam SwimlaneTitleFontStyle bold
+skinparam SwimlaneTitleFontColor #333333
 
-' State diagrams
-skinparam StateBackgroundColor #E8F5E9
-skinparam StateBorderColor #2E7D32
-skinparam StateStartColor #2E7D32
-skinparam StateEndColor #C62828
+' --- Diagrammes d'états ---------------------------------------------------
+skinparam StateBackgroundColor #F2F2F2
+skinparam StateBorderColor #6B6B6B
+skinparam StateFontColor #333333
+skinparam StateStartColor #333333
+skinparam StateEndColor #333333
 skinparam StateAttributeFontSize 11
+skinparam StateAttributeFontColor #555555
+' Noeuds de décision (<<choice>>) en jaune doré
+skinparam StateBackgroundColor<<choice>> #F5C242
+skinparam StateBorderColor<<choice>> #B8860B

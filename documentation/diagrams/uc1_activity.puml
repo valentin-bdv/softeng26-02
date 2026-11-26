@@ -3,10 +3,10 @@
 
 title UC1 - Display the world map for one indicator and one year\n(data available from 1975 to 2025)
 
-|#E3F2FD|User|
-|#E8F5E9|Front-end|
-|#FFF3E0|API|
-|#F3E5F5|Database|
+|#FAFAFA|User|
+|#F0F0F0|Front-end|
+|#E6E6E6|API|
+|#DCDCDC|Database|
 
 |User|
 start
