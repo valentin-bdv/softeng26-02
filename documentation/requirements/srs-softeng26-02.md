@@ -203,11 +203,87 @@ Each use case is described with the template below, and has an activity diagram 
 
 ### 3.3 UC3 — View a country profile
 
-*To be written by Jonah.*
+**ID and name:** UC3 — View a country profile with the time series of its indicators
+
+**Actor:** User
+
+**Preconditions**
+
+- The web application is open (layered: the responsive frontend; MVC: the desktop view `desktop.html` or the smartphone view `mobile.html`).
+- The country list (ISO3 code, name) and the indicator list are loaded.
+- Data is available from 1975 to the latest available year.
+
+**Main flow**
+
+1. The user selects a country, by clicking it on the map (UC1) or by searching it by name.
+2. The frontend requests the country profile from the REST API: `GET /api/countries/{iso3}`.
+3. The API checks that the ISO3 code has a valid format (three letters, for example `GRC`).
+4. The API reads the country (name, region, income group) and its observations for every indicator, from 1975 to the latest available year.
+5. The API checks that the country exists and returns the country data and one time series per indicator (year, value, unit).
+6. The frontend shows the profile header (name, region, income group) and one line chart per indicator. Missing years are shown as gaps, never as 0.
+7. The user hovers (desktop) or taps (smartphone) a point of a chart; the frontend shows a tooltip with the indicator, year, value and unit.
+8. Optionally, the user adds the country to a comparison: the comparison view opens with this country preselected (UC4).
+
+**Alternative flows**
+
+- **3a. Invalid code:** the ISO3 code does not have a valid format. The API returns HTTP 400 and the frontend shows "Invalid country code". The use case ends.
+- **4a. Database unavailable:** the API returns HTTP 503 and the frontend shows an error message with a retry button (NFR-REL-04, NFR-USE-05). Retrying restarts at step 2.
+- **5a. Unknown country:** no country has this ISO3 code. This includes World Bank aggregates such as `WLD`, which are never stored as countries (NFR-REL-01). The API returns HTTP 404 and the frontend shows "Country not found". The use case ends.
+- **6a. Indicator without data:** an indicator has no value at all for this country. Its chart is replaced by the label "No data" (NFR-USE-02).
+- **6b. Smartphone:** the charts are shown one at a time and the user swipes between indicators; on a desktop all charts are shown side by side. In the MVC architecture, this is the difference between the smartphone view and the desktop view.
+
+**Postconditions**
+
+- The profile of the selected country is displayed.
+- No data has been changed (read-only use case, NFR-SEC-01).
+
+**Diagrams**
+
+- Activity diagram, layered: [softeng26-02-uc03-activity.puml](../diagram-as-code/layered/softeng26-02-uc03-activity.puml) ([SVG](../diagram-as-code/layered/softeng26-02-uc03-activity.svg))
+- Activity diagram, MVC: [softeng26-02-uc03-activity.puml](../diagram-as-code/mvc/softeng26-02-uc03-activity.puml) ([SVG](../diagram-as-code/mvc/softeng26-02-uc03-activity.svg))
 
 ### 3.4 UC4 — Compare several countries
 
-*To be written by Jonah.*
+**ID and name:** UC4 — Compare several countries on one or more indicators
+
+**Actor:** User
+
+**Preconditions**
+
+- The web application is open (layered: the responsive frontend; MVC: the desktop view `desktop.html` or the smartphone view `mobile.html`).
+- The country list (ISO3 code, name) and the indicator list are loaded.
+- Data is available from 1975 to the latest available year.
+- Optionally, one country is already preselected from its profile (UC3, step 8).
+
+**Main flow**
+
+1. The user selects 2 to 5 countries, one or more indicators and a period (by default from 1975 to the latest available year).
+2. The frontend checks the selection: 2 to 5 different countries and at least one indicator.
+3. The frontend requests the observations from the REST API: `GET /api/observations?countries={iso3,...}&indicators={code,...}&from={y1}&to={y2}`.
+4. The API validates the parameters: ISO3 format of the country codes, `from` not after `to`, period within 1975 to the latest available year.
+5. The API reads the observations of the selected countries and indicators for the period.
+6. The API checks that all countries and indicators exist and returns one time series per country and indicator (year, value, unit).
+7. The frontend draws one line chart per indicator, with its own axis and unit, and one line per country. Missing years are shown as gaps, never as 0. Indicators are never drawn on a shared axis because their units differ; combining them is the purpose of the custom index (UC5).
+8. The user hovers (desktop) or taps (smartphone) a point of a chart; the frontend shows a tooltip with the country, indicator, year, value and unit.
+
+**Alternative flows**
+
+- **2a. Incomplete selection:** fewer than 2 or more than 5 different countries, or no indicator. The frontend shows the hint "Select 2 to 5 different countries and at least one indicator", sends no request, and the flow returns to step 1.
+- **4a. Invalid input:** the API returns HTTP 400 with an explanation (NFR-SEC-03) and the frontend shows the error message. The use case ends.
+- **5a. Database unavailable:** the API returns HTTP 503 and the frontend shows an error message with a retry button (NFR-REL-04, NFR-USE-05). Retrying restarts at step 3.
+- **6a. Unknown country or indicator:** at least one code does not exist, including World Bank aggregates such as `WLD` (NFR-REL-01). The API returns HTTP 404 and the frontend shows "Unknown country or indicator". The use case ends.
+- **7a. Country without data:** a country has no value for an indicator over the period. It is marked "No data" in the legend of that chart (NFR-USE-02).
+- **7b. Smartphone:** the charts are shown one at a time and the user swipes between indicators; on a desktop all charts are shown side by side. In the MVC architecture, this is the difference between the smartphone view and the desktop view.
+
+**Postconditions**
+
+- The comparison of the selected countries is displayed.
+- No data has been changed (read-only use case, NFR-SEC-01).
+
+**Diagrams**
+
+- Activity diagram, layered: [softeng26-02-uc04-activity.puml](../diagram-as-code/layered/softeng26-02-uc04-activity.puml) ([SVG](../diagram-as-code/layered/softeng26-02-uc04-activity.svg))
+- Activity diagram, MVC: [softeng26-02-uc04-activity.puml](../diagram-as-code/mvc/softeng26-02-uc04-activity.puml) ([SVG](../diagram-as-code/mvc/softeng26-02-uc04-activity.svg))
 
 ### 3.5 UC5 — Create a custom index and get the country ranking
 
